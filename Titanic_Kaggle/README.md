@@ -12,7 +12,8 @@ Practice Skills
    
   
   
-  
+ ( for more information see:  https://www.kaggle.com/)
+     
   
 Goal
 
@@ -33,7 +34,6 @@ The file should have exactly 2 columns:
     
     
     
-    for more information see:
-    https://www.kaggle.com/
+    
     
 
