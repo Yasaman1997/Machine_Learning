@@ -19,6 +19,24 @@ sigma = 0.3;
 %                   predictions = svmPredict(model, Xval);
 %               will return the predictions on the cross validation set.
 %
+
+s1 = [0.01 0.03 0.1 0.3 1 3 10 30];
+s2 = [0.01 0.03 0.1 0.3 1 3 10 30];
+err = flintmax ();
+for ctmp = s1,
+	for sigmatmp = s2,
+		
+		model= svmTrain(X, y, ctmp, @(x1, x2) gaussianKernel(x1, x2, sigmatmp)); 
+		pred = svmPredict(model, Xval);
+		errtmp =  mean(double(pred ~= yval));
+		if errtmp < err,
+			err = errtmp;
+			C = ctmp;
+			sigma = sigmatmp;
+		end;
+	end;
+end;
+
 %  Note: You can compute the prediction error using 
 %        mean(double(predictions ~= yval))
 %

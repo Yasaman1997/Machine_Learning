@@ -134,6 +134,9 @@ pause;
 %  different values of C and sigma here.
 % 
 
+model= svmTrain(X, y, C, @(x1, x2) gaussianKernel(x1, x2, sigma)); 
+visualizeBoundary(X, y, model);
+
 % Load from ex6data3: 
 % You will have X, y in your environment
 load('ex6data3.mat');
