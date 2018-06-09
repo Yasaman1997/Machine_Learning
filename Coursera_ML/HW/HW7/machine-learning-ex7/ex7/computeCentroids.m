@@ -25,18 +25,18 @@ centroids = zeros(K, n);
 %
 % Note: You can use a for-loop over the centroids to compute this.
 %
+num = zeros(K, 1);
 
-% Initialize centroids
-centroids = kMeansInitCentroids(X, K);
-for iter = 1:iterations
-% Cluster assignment step: Assign each data point to the
-% closest centroid. idx(i) corresponds to cˆ(i), the index
-% of the centroid assigned to example i
-idx = findClosestCentroids(X, centroids);
-% Move centroid step: Compute means based on centroid
-% assignments
-centroids = computeMeans(X, idx, K);
-end
+for i=1:m,
+
+	centroids(idx(i), :) = X(i, :) + centroids(idx(i), :);
+	num(idx(i), :) = num(idx(i), :) + 1;
+end;
+
+for i=1:K,
+	centroids(i, :) = centroids(i, :) ./ num(i);
+end;
+
 
 
 

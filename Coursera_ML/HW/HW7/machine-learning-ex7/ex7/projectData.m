@@ -7,6 +7,7 @@ function Z = projectData(X, U, K)
 %
 
 % You need to return the following variables correctly.
+
 Z = zeros(size(X, 1), K);
 
 % ====================== YOUR CODE HERE ======================
@@ -19,6 +20,7 @@ Z = zeros(size(X, 1), K);
 %
 
 
+Z =  X * U(:, 1:K);
 
 
 % =============================================================

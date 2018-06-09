@@ -22,6 +22,18 @@ idx = zeros(size(X,1), 1);
 %
 
 
+for i=1:size(X,1),
+	mini = flintmax();
+	idx(i) = 1;
+	for j=1:size(centroids,1),
+		tmp = sum((X(i, :) - centroids(j, :)).^2);
+
+		if tmp < mini,
+			idx(i) = j;
+			mini = tmp;
+		end;
+	end;
+end;
 
 
 
