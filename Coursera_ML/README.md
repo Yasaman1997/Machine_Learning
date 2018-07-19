@@ -1,7 +1,6 @@
 
 
 Machine Learning
-
 [This is the link of the course](https://www.coursera.org/learn/machine-learning)
 
 
